@@ -1,0 +1,11 @@
+// Type nodechef login and you will prompted for your credentails.
+nodechef login
+
+// You can also generate a deployment token from the dashboard and skip having to login:
+nodechef deploy -i myapp -auth re5D-QC5nlzQVRK7jpXStfKcTkdXrbLE9YGGkbAu6NnCx
+
+46081327+stephenbrooks220413@users.noreply.github.com
+
+deploy -i nursingagency
+
+https://healthcareprostaffingllc-18273.nodechef.com/

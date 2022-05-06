@@ -1,0 +1,40 @@
+{
+  "name": "nursing",
+  "version": "1.0.0",
+  "description": "Nursing Agency to fill your staffing & home care needs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
+    "worker": "node index.js",
+    "postinstall": "echo 'staffing agency'"
+  },
+  "ROOT_URL": "www.careprostaffing.com",
+  "keywords": [
+    "nursing jobs", "nurse staffing", "nurses", "nurse"
+  ],
+  "author": "Stephen Brooks",
+  "url": "https://stevenswebdesigns.herokuapp.com",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "express-fileupload": "^1.3.1",
+    "express-session": "^1.17.2",
+    "flash": "^1.1.0",
+    "method-override": "^3.0.0",
+    "mongodb": "^4.5.0",
+    "mongoose": "^6.3.0",
+    "mongoose-unique-validator": "^3.0.0"
+  },
+  "engines": {
+    "node": "17.7.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

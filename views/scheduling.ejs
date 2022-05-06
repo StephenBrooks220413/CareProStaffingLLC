@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('layouts/header') -%>
+<body class="schedule-bg">
+
+<!--Navbar-->
+<%- include('layouts/navBar') -%>
+<!-- Navbar -->
+
+
+<div class="container p-5" style="margin-top:90px; margin-bottom: 60px;">
+    <h1 class="display-3">Scheduling</h1>
+    <p class="lead">
+        View the schedule that you have posted or post your preferred hours.
+    </p>
+    <%- include('components/schedule') -%>
+    <!-- Material form contact -->
+    <div class="card">
+        <!--Card content-->
+        <div class="card-body px-lg-5 pt-0">
+
+            <!-- Form -->
+            <form style="color: #757575;" action="/schedule/store" method="post" enctype="multipart/form-data">
+
+                <!-- Name -->
+                <div class="md-form mt-3"><label for="name">Your Name</label>
+                    <input type="text" name="name" required id="name" class="form-control">
+                </div>
+
+                <!-- Name -->
+                <div class="md-form mt-3">
+                    <label for="employeeID">Employee ID</label>
+                    <input type="text" name="employeeID" required id="employeeID" class="form-control">
+
+                </div>
+
+                <!-- E-mail -->
+                <div class="md-form mt-3">
+                    <label for="location">Location Preference</label>
+                    <input type="text" required name="location" id="location" class="form-control">
+                </div>
+
+                <!--Message-->
+                <div class="row mt-3">
+                  <div class="col-md m-2">
+                      <div class="md-form">
+                          <label for="hours">Hours Available</label>
+                          <select name="hours" id="hours">
+                              <option value="" selected></option>
+                              <option value="6am-3pm">6am-3pm</option>
+                              <option value="7am-4pm">7am-4pm</option>
+                              <option value="8am-5pm">8am-5pm</option>
+                              <option value="1pm-9pm">1pm-9pm</option>
+                              <option value="2pm-10pm">2pm-10pm</option>
+                              <option value="3pm-11pm">3pm-11pm</option>
+                              <option value="10pm-6am">10pm-6am</option>
+                              <option value="11pm-7am">11pm-7am</option>
+                              <option value="12am-8am">12am-8am</option>
+                          </select>
+                      </div>
+                  </div>
+                    <div class="col-md m-2">
+                        <div class="md-form">
+                            <label for="materialContactFormMessage">Dates Available</label>
+                            <input type="date" name="date">
+                        </div>
+                    </div>
+                    <div class="col-md m-2">
+                        <div class="md-form">
+                            <label for="client">Client Type</label>
+                            <select name="client" id="client">
+                                <option value="" selected></option>
+                                <option value="Houston Care">Houston Care</option>
+                                <option value="Mobile Care">Mobile Care</option>
+                                <option value="Memorial Hospital">Memorial Hospital</option>
+                                <option value="Private Care">Private Care</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Send button -->
+                <button class="btn btn-magenta btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Send</button>
+
+            </form>
+            <!-- Form -->
+
+        </div>
+
+    </div>
+    <!-- Material form contact -->
+</div>
+
+<!-- Footer -->
+<%- include('layouts/footer') -%>
+<!-- Footer -->
+
+<%- include('layouts/scripts') -%>
+
+</body>
+</html>

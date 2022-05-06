@@ -1,0 +1,81 @@
+<div style="margin-top: 70px; margin-bottom: 100px;">
+    <div class="container text-center">
+        <h1 class="display-6 text-white">We Love Our Community, We Listen.</h1>
+            <p class="lead text-white">Leave us a <a class="fw-bolder" href="/auth/createReview">review</a> of your current or previous experience. We want to hear from you!!!</p>
+            <div class="row text-center mt-5">
+                <% for(i=0; i<reviews.length; i++){ %>
+                <div data-mdb-toggle="animation"
+                     data-mdb-animation-start="onScroll"
+                     data-mdb-animation="fade-in-up"
+                     data-mdb-animation-delay="300"
+                     class="col-md text-white m-2">
+                    <i class="fas fa-star p-1" style="color: goldenrod"></i>
+                    <i class="fas fa-star p-1" style="color: goldenrod"></i>
+                    <i class="fas fa-star p-1" style="color: goldenrod"></i>
+                    <i class="fas fa-star p-1" style="color: goldenrod"></i>
+                    <i class="fas fa-star p-1" style="color: goldenrod"></i>
+                    <h2>
+                        <%= reviews[i].title %>
+                    </h2>
+                    <p class="lead">
+                        <%= reviews[i].description %> <br>
+                        Rated <%= reviews[i].rating %> out of 5 stars
+                    </p>
+                    <p>
+                        By <%= reviews[i].yourName %> <br>
+                        Posted On <%= reviews[i].datePosted.toLocaleString() %>
+                    </p>
+                </div>
+                <% } %>
+            </div>
+        <% for(i=0; i>reviews.length;) {%>
+            <div class="row row-cols-lg-auto mx-auto d-flex justify-content-center align-content-center text-center py-1 me-1">
+                <div class="card p-2 m-2">
+                    <h4>Title</h4>
+                    <p class="lead">
+                        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis doloremque esse eum inventore nam perferendis quas quod repellat similique! Beatae consequuntur delectus eum impedit laudantium natus omnis placeat possimus, voluptatem!"
+                    </p>
+                    <p>
+                        Posted On March 09, 2022
+                    </p>
+                </div>
+                <div class="card p-2 m-2">
+                    <h4>Title</h4>
+                    <p class="lead">
+                        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis doloremque esse eum inventore nam perferendis quas quod repellat similique! Beatae consequuntur delectus eum impedit laudantium natus omnis placeat possimus, voluptatem!"
+                    </p>
+                    <p>
+                        Posted On March 09, 2022
+                    </p>
+                </div>
+                <div class="card p-2 m-2">
+                    <h4>Title</h4>
+                    <p class="lead">
+                        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis doloremque esse eum inventore nam perferendis quas quod repellat similique! Beatae consequuntur delectus eum impedit laudantium natus omnis placeat possimus, voluptatem!"
+                    </p>
+                    <p>
+                        Posted On March 09, 2022
+                    </p>
+                </div>
+                <div class="card p-2 m-2">
+                    <h4>Title</h4>
+                    <p class="lead">
+                        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis doloremque esse eum inventore nam perferendis quas quod repellat similique! Beatae consequuntur delectus eum impedit laudantium natus omnis placeat possimus, voluptatem!"
+                    </p>
+                    <p>
+                        Posted On March 09, 2022
+                    </p>
+                </div>
+                <div class="card p-2 m-2">
+                    <h4>Title</h4>
+                    <p class="lead">
+                        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis doloremque esse eum inventore nam perferendis quas quod repellat similique! Beatae consequuntur delectus eum impedit laudantium natus omnis placeat possimus, voluptatem!"
+                    </p>
+                    <p>
+                        Posted On March 09, 2022
+                    </p>
+                </div>
+            </div>
+        <% } %>
+    </div>
+</div>

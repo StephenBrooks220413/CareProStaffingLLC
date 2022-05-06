@@ -1,0 +1,18 @@
+.max {
+    max-height: 200px;
+}
+
+.bg-layout {
+
+    background: rgb(221,57,180);
+    background: radial-gradient(circle, rgba(221,57,180,1) 0%, rgba(222,160,227,1) 35%, rgba(247,236,247,1) 100%);
+}
+
+.schedule-bg {
+
+    background-color: #E6E6FA;
+}
+
+.max-logo {
+    max-height: 290px;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('layouts/header') -%>
+<body>
+
+<header>
+
+    <!--Navbar-->
+    <%- include('layouts/nav') -%>
+    <!-- Navbar -->
+
+    <div class="container-fluid mt-3 text-center">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item active">Projects</li>
+            </ol>
+        </nav>
+
+        <!--Grid row-->
+        <div class="row py-3">
+            <!--Grid column-->
+            <div class="col-sm-12 col-md-3 col-lg-3 zoom">
+                <h5 class="card-header">Project#1</h5>
+                <a href="https://aslwithtracy.stephenbrooks.repl.co/" target="_blank">
+                    <img src="/img/project1.png"
+                         class="img-fluid shadow-3-strong rounded"
+                         alt="img">
+                </a>
+                <p class="card-footer">
+                    <a href="https://github.com/StephenBrooks220413/aslwithtracy.git" target="_blank">Github Repo</a>
+                </p>
+            </div>
+            <div class="zoom col-sm-12 col-md-3 col-lg-3">
+                <h5 class="card-header">Project#2</h5>
+                <a href="https://devgym-1.stephenbrooks.repl.co/" target="_blank">
+                    <img src="/img/project2.png"
+                         class="img-fluid shadow-3-strong rounded"
+                         alt="img">
+                </a>
+                <p class="card-footer">
+                    <a href="https://github.com/StephenBrooks220413/DevGym.git" target="_blank">Github Repo</a>
+                </p>
+            </div>
+            <div class="zoom col-sm-12 col-md-3 col-lg-3">
+                <h5 class="card-header">Project#3</h5>
+                <a href="https://silly-meitner-b3ed23.netlify.app/" target="_blank">
+                    <img src="/img/project3.png"
+                         class="img-fluid shadow-3-strong rounded"
+                         alt="img">
+                </a>
+                <p class="card-footer">
+                    <a href="https://github.com/StephenBrooks220413/preact-netlify.git" target="_blank">Github Repo</a>
+                </p>
+            </div>
+            <div class="zoom col-sm-12 col-md-3 col-lg-3">
+                <h5 class="card-header">Project#4</h5>
+                <a href="https://jpscustomz.netlify.app/" target="_blank">
+                    <img src="/img/project4.png"
+                         class="img-fluid shadow-3-strong rounded"
+                         alt="img">
+                </a>
+                <p class="card-footer">
+                    <a href="https://github.com/StephenBrooks220413/jpscustomz.git" target="_blank">Github Repo</a>
+                </p>
+            </div>
+            <!--Grid column-->
+        </div>
+        <!--Grid row-->
+    </div>
+
+    <!-- Footer -->
+    <%- include('layouts/footer') -%>
+    <!-- Footer -->
+
+    <%- include('layouts/scripts') -%>
+
+</body>
+</html>
