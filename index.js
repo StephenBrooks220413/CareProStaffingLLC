@@ -53,8 +53,8 @@ app.listen(port, () => {
 })
 /////////////////////////////////////////////////////////////
 // Middlewares
-// const validateMiddleware = require('./middleware/validateMiddleware')
-// const authMiddleware = require('./middleware/authMiddleware');
+const validateMiddleware = require('./middleware/validateMiddleware');
+const authMiddleware = require('./middleware/authMiddleware');
 const redirectIfAuthenticated = require('./middleware/redirectIfAuthenticated')
 
 /////////////////////////////////////////////////
@@ -93,9 +93,9 @@ app.post('/users/register', redirectIfAuthenticated, storeUserController);
 app.post('/users/login', redirectIfAuthenticated, loginUserController);
 app.get('/auth/logout', logoutController);
 app.get('/profiles', profilesController);
-app.get('/profile/:id', profileController);
+app.get('/profile/:id', validateMiddleware, profileController);
 app.post('/schedule/store', storeScheduleController)
-app.get('/scheduling', scheduleController);
+app.get('/scheduling',validateMiddleware, scheduleController);
 
 ///////////////////////////////////////////////////////////
 // Reviews

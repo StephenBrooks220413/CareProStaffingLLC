@@ -10,7 +10,7 @@ const ScheduleSchema = new Schema ({
         type: String,
         required: true
     },
-    employeeID: {
+    email: {
         type: String,
         required: true
     },

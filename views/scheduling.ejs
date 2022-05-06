@@ -29,33 +29,31 @@
 
                 <!-- Name -->
                 <div class="md-form mt-3">
-                    <label for="employeeID">Employee ID</label>
-                    <input type="text" name="employeeID" required id="employeeID" class="form-control">
+                    <label for="email">Email</label>
+                    <input type="text" name="email" required id="emmail" class="form-control">
 
                 </div>
 
                 <!-- E-mail -->
                 <div class="md-form mt-3">
                     <label for="location">Location Preference</label>
-                    <input type="text" required name="location" id="location" class="form-control">
+                    <input type="text" placeholder="In hospital, at home care, etc" required name="location" id="location" class="form-control">
                 </div>
 
                 <!--Message-->
                 <div class="row mt-3">
                   <div class="col-md m-2">
                       <div class="md-form">
-                          <label for="hours">Hours Available</label>
+                          <label for="hours">Shift Preference</label>
                           <select name="hours" id="hours">
                               <option value="" selected></option>
                               <option value="6am-3pm">6am-3pm</option>
                               <option value="7am-4pm">7am-4pm</option>
                               <option value="8am-5pm">8am-5pm</option>
-                              <option value="1pm-9pm">1pm-9pm</option>
-                              <option value="2pm-10pm">2pm-10pm</option>
-                              <option value="3pm-11pm">3pm-11pm</option>
-                              <option value="10pm-6am">10pm-6am</option>
-                              <option value="11pm-7am">11pm-7am</option>
-                              <option value="12am-8am">12am-8am</option>
+                              <option value="any shift">Any Shift</option>
+                              <option value="on call">On Call</option>
+                              <option value="night shift">Night Shift</option>
+                              <option value="graveyard">Graveyard</option>
                           </select>
                       </div>
                   </div>
@@ -67,12 +65,12 @@
                     </div>
                     <div class="col-md m-2">
                         <div class="md-form">
-                            <label for="client">Client Type</label>
+                            <label for="client">Work Type</label>
                             <select name="client" id="client">
                                 <option value="" selected></option>
-                                <option value="Houston Care">Houston Care</option>
-                                <option value="Mobile Care">Mobile Care</option>
-                                <option value="Memorial Hospital">Memorial Hospital</option>
+                                <option value="Pediatrics">Pediatrics</option>
+                                <option value="Elederly">Elderly</option>
+                                <option value="General">General</option>
                                 <option value="Private Care">Private Care</option>
                             </select>
                         </div>

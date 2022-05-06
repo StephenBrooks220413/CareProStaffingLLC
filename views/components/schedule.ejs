@@ -3,11 +3,11 @@
         <thead>
         <tr>
             <th class="th-sm">Name</th>
-            <th class="th-sm">EmployeeID</th>
+            <th class="th-sm">EMail</th>
             <th class="th-sm">Location</th>
             <th class="th-sm">Times</th>
             <th class="th-sm">Date</th>
-            <th class="th-sm">Client</th>
+            <th class="th-sm">Work</th>
             <th class="th-sm">Date Posted</th>
         </tr>
         </thead>
@@ -15,7 +15,7 @@
         <% for(i=0; i<schedule.length; i++){ %>
             <tr>
                 <td><%= schedule[i].name %></td>
-                <td><%= schedule[i].employeeID %></td>
+                <td><a href="mailto:<%= schedule[i].email %>"><%= schedule[i].email %></a></td>
                 <td><%= schedule[i].location %></td>
                 <td><%= schedule[i].hours %></td>
                 <td><%= schedule[i].date %></td>
