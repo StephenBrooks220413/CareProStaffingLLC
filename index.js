@@ -95,7 +95,7 @@ app.get('/auth/logout', logoutController);
 app.get('/profiles', profilesController);
 app.get('/profile/:id', validateMiddleware, profileController);
 app.post('/schedule/store', storeScheduleController)
-app.get('/scheduling',validateMiddleware, scheduleController);
+app.get('/scheduling',authMiddleware, scheduleController);
 
 ///////////////////////////////////////////////////////////
 // Reviews
