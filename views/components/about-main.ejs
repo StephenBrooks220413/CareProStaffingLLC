@@ -36,9 +36,7 @@
         <% for(i=0; i<users.length; i++){ %>
             <div class="col-md m-2 hover-zoom">
                 <h4><%= users[i].name %></h4>
-                <a href="/profile/<%= users[i]._id %>">
-                    <img src="<%= users[i].image %>" class="img-fluid max rounded-circle" alt="<%= users[i].name %>">
-                </a>
+                <img src="<%= users[i].image %>" class="img-fluid max rounded-circle" alt="<%= users[i].name %>">
                 <p>
                     Employed Since <%= users[i].joinedDate.toLocaleString() %>
                 </p>
