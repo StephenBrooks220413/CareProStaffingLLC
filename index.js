@@ -60,6 +60,7 @@ const redirectIfAuthenticated = require('./middleware/redirectIfAuthenticated')
 /////////////////////////////////////////////////
 // Controllers
 const homeController = require('./controllers/home');
+const contactController = require('./controllers/contact')
 const applyPageController = require('./controllers/apply')
 const aboutController = require('./controllers/about');
 const pocController = require('./controllers/POC');
@@ -79,6 +80,7 @@ const storeScheduleController = require('./controllers/storeSchedule')
 /////////////////////////////////////////////////
 
 app.get('/', homeController);
+app.get('/contact', contactController)
 app.get('/apply', applyPageController)
 app.get('/about', aboutController);
 app.get('/portfolio', portfolioController);
@@ -103,3 +105,5 @@ app.get('/auth/createReview', newReviewController);
 app.post('/reviews/store', storeReviewController);
 
 app.use((req, res) => res.render('error'))
+
+
