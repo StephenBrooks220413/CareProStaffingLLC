@@ -11,19 +11,19 @@
     <img src="/img/navLogo.png" class="img-fluid rounded-circle max-logo" alt="logo" />
     <h3>Thank You For Joining!!</h3>
     <!-- Default form register -->
+    <p class="h4 mb-4">Sign up</p>
+
+    <% if(errors != null && errors.length > 0) { %>
+        <ul class="list-group">
+            <% for(let i = 0; i < errors.length; i++){ %>
+                <li class="list-group-item list-group-item-danger">
+                    <%= errors[i] %>
+                </li>
+            <% } %>
+        </ul>
+    <% } %>
     <form class="text-center p-5" action="/users/register" method="post" enctype="multipart/form-data">
 
-        <p class="h4 mb-4">Sign up</p>
-
-        <% if(errors != null && errors.length > 0) { %>
-            <ul class="list-group">
-                <% for(let i = 0; i < errors.length; i++){ %>
-                    <li class="list-group-item list-group-item-danger">
-                        <%= errors[i] %>
-                    </li>
-                <% } %>
-            </ul>
-        <% } %>
 
         <div class="md-form mb-3">
             <!-- First name -->
@@ -35,12 +35,17 @@
             <input type="text" id="name" name="name" class="form-control md-textarea" placeholder="Your Name">
         </div>
 
+        <div class="md-form mb-3">
+            <!-- First name -->
+            <input type="text" id="jobTitle" name="jobTitle" class="form-control md-textarea" placeholder="Your Job Title">
+        </div>
+
         <!-- E-mail -->
         <div class="md-form mb-3">
             <input type="email" id="email" name="email" class="form-control md-textarea mb-4" placeholder="E-mail">
         </div>
 
-        <!-- E-mail -->
+        <!-- Image -->
         <div class="md-form mb-3">
             <label for="image">Your Profile Picture</label>
             <input type="file" id="image" name="image" class="form-control md-textarea mb-4" accept="image/*">
@@ -50,6 +55,11 @@
         <div class="md-form mb-3">
             <!-- First name -->
             <input type="password" id="password" name="password" class="form-control md-textarea" placeholder="Password">
+        </div>
+
+        <div class="md-form mb-3">
+            <!-- First name -->
+            <input type="text" id="phone" name="phone" class="form-control md-textarea" placeholder="Your Phone#">
         </div>
 
         <!--Message-->
@@ -65,9 +75,6 @@
         <hr>
 
         <!-- Terms of service -->
-        <p>By clicking
-            <em>Sign up</em> you agree to our
-            <a href="" target="_blank">terms of service</a>
 
     </form>
     <!-- Default form register -->

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('layouts/header') -%>
+<body class="bg-layout">
+<%- include('layouts/navBar') -%>
+
+<div class="container text-center p-4" style="margin-top: 40px; margin-bottom: 60px;">
+    <div class="main">
+        <h2>Admin Form Validation</h2>
+        <form id="form_id" method="post" name="myform">
+            <label class="form-label">User Name :</label>
+            <input type="text" class="form-control mb-3" name="username" id="username"/> <br>
+            <label class="form-label" for="password">Password :</label>
+            <input type="password" id="password" class="form-control mb-3" name="password" id="password"/> <br>
+            <input type="button" class="btn btn-primary w-50" value="Login" id="submit" onclick="validate()"/>
+        </form>
+    </div>
+</div>
+
+<%- include('layouts/footer') -%>
+</body>
+<%- include('layouts/scripts') -%>
+<script type="text/javascript" src="/js/admin.js"></script>
+</html>

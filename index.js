@@ -60,8 +60,10 @@ const redirectIfAuthenticated = require('./middleware/redirectIfAuthenticated')
 /////////////////////////////////////////////////
 // Controllers
 const homeController = require('./controllers/home');
-const contactController = require('./controllers/contact')
-const applyPageController = require('./controllers/apply')
+const adminController = require('./controllers/admin');
+const dashboardController = require('./controllers/dashboard')
+const contactController = require('./controllers/contact');
+const applyPageController = require('./controllers/apply');
 const aboutController = require('./controllers/about');
 const pocController = require('./controllers/POC');
 const communityController = require('./controllers/community');
@@ -76,12 +78,20 @@ const profileController = require('./controllers/profile');
 const newReviewController = require('./controllers/newReview');
 const storeReviewController = require('./controllers/storeReview');
 const scheduleController = require('./controllers/schedule');
-const storeScheduleController = require('./controllers/storeSchedule')
+const storeScheduleController = require('./controllers/storeSchedule');
+const applicantController = require('./controllers/storeApplicant');
+const storeController = require('./controllers/store');
+const termsController = require('./controllers/term');
 /////////////////////////////////////////////////
 
 app.get('/', homeController);
+app.get('/admin', adminController);
+app.get('/terms&conditions', termsController);
+app.get('/dashboard', dashboardController)
 app.get('/contact', contactController)
 app.get('/apply', applyPageController)
+app.post('/applicant', applicantController);
+app.get('/store', storeController)
 app.get('/about', aboutController);
 app.get('/portfolio', portfolioController);
 app.get('/poc', pocController);

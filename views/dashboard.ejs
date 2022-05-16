@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('layouts/header') -%>
+<body class="bg-layout">
+<%- include('layouts/navBar') -%>
+
+<div class="container-fluid text-center p-4" style="margin-top: 70px; margin-bottom: 60px;">
+    <h1 class="display-1 text-center" style="font-family: 'Beau Rivage', cursive;">CareProAdmin Dashboard</h1>
+    <!-- Section: Design Block -->
+    <p>
+        Need assistance? <a class="text-decoration-underline" href="mailto:stephenbrooks714@gmail.com">Contact</a> the developer.
+    </p>
+    <br><br>
+    <h1 class="display-6">What's Going On Now</h1>
+    <section class="mb-7">
+        <div class="shadow-4 rounded-5 overflow-hidden">
+            <table class="table align-middle mb-0 bg-white">
+                <thead class="bg-light">
+                <tr>
+                    <th>Name</th>
+                    <th>Title</th>
+                    <th>Status</th>
+                    <th>Position</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <img
+                                    src="https://mdbootstrap.com/img/new/avatars/8.jpg"
+                                    alt=""
+                                    style="width: 45px; height: 45px"
+                                    class="rounded-circle"
+                            />
+                            <div class="ms-3">
+                                <p class="fw-bold mb-1">John Doe</p>
+                                <p class="text-muted mb-0">john.doe@gmail.com</p>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <p class="fw-normal mb-1">Travel Nurse</p>
+                        <p class="text-muted mb-0">On Call Nurse</p>
+                    </td>
+                    <td>
+                        <span class="badge badge-success rounded-pill">Employee</span>
+                    </td>
+                    <td>Nurse</td>
+                    <td>
+                        <button type="button" class="btn btn-link btn-sm btn-rounded">
+                            Call
+                        </button>
+                    </td>
+                </tr>
+                <% for(i=0; i<users.length; i++){ %>
+                    <tr>
+                        <td>
+                            <div class="d-flex align-items-center">
+                                <img
+                                        src="<%= users[i].image %>"
+                                        alt="<%= users[i].name %>"
+                                        style="width: 45px; height: 45px"
+                                        class="rounded-circle"
+                                />
+                                <div class="ms-3">
+                                    <p class="fw-bold mb-1"><%= users[i].name %></p>
+                                    <p class="text-muted mb-0"><%= users[i].email %></p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <p class="fw-normal mb-1"><%= users[i].jobTitle %></p>
+                            <p class="text-muted mb-0"><%= users[i].status %></p>
+                        </td>
+                        <td>
+                            <span class="badge badge-success rounded-pill">Employee</span>
+                        </td>
+                        <td>Nurse</td>
+                        <td>
+                            <button type="button" class="btn btn-link btn-sm btn-rounded">
+                                <a href="tel:<%= users[i].phone %>">Call</a>
+                            </button>
+                        </td>
+                    </tr>
+                <% } %>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <!-- Section: Design Block -->
+
+    <h1 class="display-6 mb-3">Schedules</h1>
+    <div  class="datatable mb-7">
+        <table>
+            <thead>
+            <tr>
+                <th class="th-sm">Name</th>
+                <th class="th-sm">Available</th>
+                <th class="th-sm">Shift</th>
+                <th class="th-sm">Location</th>
+                <th class="th-sm">Date Posted</th>
+                <th class="th-sm">Status</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <% for(i=0; i < schedule.length; i++){ %>
+            <tr>
+                <td><%= schedule[i].name %></td>
+                <td><%= schedule[i].date %></td>
+                <td><%= schedule[i].hours %></td>
+                <td><%= schedule[i].location %></td>
+                <td><%= schedule[i].datePosted %></td>
+                <td><%= schedule[i].client %></td>
+            </tr>
+            <% } %>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container text-white" style="margin-top: 60px; margin-bottom: 60px;">
+        <%- include('components/applicant') -%>
+    </div>
+
+    <div class="container text-white" style="margin-top: 60px; margin-bottom: 60px;">
+        <h1 class="display-6 mb-3">Submit Schedule</h1>
+        <!-- Form -->
+        <form style="color: #757575;" action="/schedule/store" method="post" enctype="multipart/form-data">
+
+            <!-- Name -->
+            <div class="md-form mt-3 text-white"><label for="name">Contractor / Employee Name</label>
+                <input type="text" name="name" required id="name" class="form-control">
+            </div>
+
+            <!-- Name -->
+            <div class="md-form text-white mt-3">
+                <label for="email">Email</label>
+                <input type="text" name="email" required id="emmail" class="form-control">
+
+            </div>
+
+            <!-- E-mail -->
+            <div class="md- text-white mt-3">
+                <label for="location">Location Preference</label>
+                <input type="text" placeholder="In hospital, at home care, etc" required name="location" id="location" class="form-control">
+            </div>
+
+            <!--Message-->
+            <div class="row mt-3">
+                <div class="col-md m-2">
+                    <div class="md-form">
+                        <label for="hours" class="text-white form-label">Shift Preference</label>
+                        <select name="hours" class="form-control" id="hours">
+                            <option value="" selected></option>
+                            <option value="6am-3pm">Days</option>
+                            <option value="7am-4pm">Evening</option>
+                            <option value="8am-5pm">NOC</option>
+                            <option value="any shift">Any Shift</option>
+                            <option value="on call">On Call</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md m-2">
+                    <div class="md-form">
+                        <label class="text-white form-label" for="materialContactFormMessage">Dates Available</label>
+                        <input type="date" class="form-control" id="date" name="date">
+                    </div>
+                </div>
+                <div class="col-md m-2">
+                    <div class="md-form">
+                        <label class="text-white form-label" for="client">Work Type</label>
+                        <select name="client" class="form-control" id="client">
+                            <option value="" selected></option>
+                            <option value="Pediatrics">Rehab/LTC</option>
+                            <option value="Elederly">SNF</option>
+                            <option value="General">Assisted Living</option>
+                            <option value="Private Care">Hospital</option>
+                            <option value="Private Care">Home Health</option>
+                            <option value="Private Care">Group Health</option>
+                            <option value="Private Care">All</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Send button -->
+            <button class="btn btn-magenta btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Send</button>
+
+        </form>
+        <!-- Form -->
+    </div>
+</div>
+
+<%- include('layouts/footer') -%>
+</body>
+<%- include('layouts/scripts') -%>
+</html>

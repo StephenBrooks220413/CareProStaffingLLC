@@ -18,6 +18,14 @@ const UserSchema = new Schema ({
         type: String,
         required: [true, 'Please Provide A Username']
     },
+    phone: {
+        type: String,
+        required: [true, 'Please Provide A Username']
+    },
+    jobTitle: {
+        type: String,
+        required: [true, 'Please Provide A Username']
+    },
     about: {
         type: String,
         required: [true, 'Please Talk About Yourself']

@@ -8,86 +8,13 @@
 <!-- Navbar -->
 
 
-<div class="container p-5" style="margin-top:90px; margin-bottom: 60px;">
+<div class="container-fluid p-5" style="margin-top:60px; margin-bottom: 60px;">
     <h1 class="display-3">Scheduling</h1>
     <p class="lead">
-        View the schedule that you have posted or post your preferred hours.
+        View the schedule that you had requested or email HR about any concerns.
     </p>
     <%- include('components/schedule') -%>
-    <!-- Material form contact -->
-    <div class="card">
-        <!--Card content-->
-        <div class="card-body px-lg-5 pt-0">
 
-            <!-- Form -->
-            <form style="color: #757575;" action="/schedule/store" method="post" enctype="multipart/form-data">
-
-                <!-- Name -->
-                <div class="md-form mt-3"><label for="name">Your Name</label>
-                    <input type="text" name="name" required id="name" class="form-control">
-                </div>
-
-                <!-- Name -->
-                <div class="md-form mt-3">
-                    <label for="email">Email</label>
-                    <input type="text" name="email" required id="emmail" class="form-control">
-
-                </div>
-
-                <!-- E-mail -->
-                <div class="md-form mt-3">
-                    <label for="location">Location Preference</label>
-                    <input type="text" placeholder="In hospital, at home care, etc" required name="location" id="location" class="form-control">
-                </div>
-
-                <!--Message-->
-                <div class="row mt-3">
-                  <div class="col-md m-2">
-                      <div class="md-form">
-                          <label for="hours">Shift Preference</label>
-                          <select name="hours" id="hours">
-                              <option value="" selected></option>
-                              <option value="6am-3pm">Days</option>
-                              <option value="7am-4pm">Evening</option>
-                              <option value="8am-5pm">NOC</option>
-                              <option value="any shift">Any Shift</option>
-                              <option value="on call">On Call</option>
-                          </select>
-                      </div>
-                  </div>
-                    <div class="col-md m-2">
-                        <div class="md-form">
-                            <label for="materialContactFormMessage">Dates Available</label>
-                            <input type="date" name="date">
-                        </div>
-                    </div>
-                    <div class="col-md m-2">
-                        <div class="md-form">
-                            <label for="client">Work Type</label>
-                            <select name="client" id="client">
-                                <option value="" selected></option>
-                                <option value="Pediatrics">Rehab/LTC</option>
-                                <option value="Elederly">SNF</option>
-                                <option value="General">Assisted Living</option>
-                                <option value="Private Care">Hospital</option>
-                                <option value="Private Care">Home Health</option>
-                                <option value="Private Care">Group Health</option>
-                                <option value="Private Care">All</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Send button -->
-                <button class="btn btn-magenta btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Send</button>
-
-            </form>
-            <!-- Form -->
-
-        </div>
-
-    </div>
-    <!-- Material form contact -->
 </div>
 
 <!-- Footer -->
