@@ -9,6 +9,7 @@
             <th class="th-sm">Date</th>
             <th class="th-sm">Work</th>
             <th class="th-sm">Date Posted</th>
+            <th class="th-sm">MakeChanges</th>
         </tr>
         </thead>
         <tbody>
@@ -21,6 +22,7 @@
                 <td><%= schedule[i].date %></td>
                 <td><%= schedule[i].client %></td>
                 <td>Posted On <br> <%= schedule[i].datePosted.toLocaleString() %></td>
+                <td><a href="/changeSchedule/<%= schedule[i]._id %>" class="btn btn-warning rounded-pill">Update</a></td>
             </tr>
         <% } %>
         </tbody>

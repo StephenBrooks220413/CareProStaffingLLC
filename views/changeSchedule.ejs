@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('layouts/header') -%>
+<body class="schedule-bg">
+
+<!--Navbar-->
+<%- include('layouts/navBar') -%>
+<!-- Navbar -->
+
+
+<div class="container-fluid p-5" style="margin-top:40px; margin-bottom: 60px;">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/scheduling">Schedules</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Scheduling</li>
+        </ol>
+    </nav>
+    <h1 class="display-3">Scheduling</h1>
+    <p class="lead">
+        Before You Delete Your Schedule, <a href="anthonyh@careprostaffingllc.com">Email</a> Us for the Reason. Be sure to do
+        so at least within 4 hours in advance if possible. We understand that emergencies do come up.
+    </p>
+    <div class="p-4">
+        <ul>
+            <li><%= schedule.name %></li>
+            <li><a href="mailto:<%= schedule.email %>"><%= schedule.email %></a></li>
+            <li><%= schedule.location %></li>
+            <li><%= schedule.hours %></li>
+            <li><%= schedule.date %></li>
+            <li><%= schedule.client %></li>
+            <li>Posted On <br> <%= schedule.datePosted.toLocaleString() %></li>
+            <form action="/deleteSchedule/<%= schedule._id %>" method="delete">
+                <button type="submit" class="btn btn-warning rounded-pill">Delete</button>
+                <br>
+                <input type="checkbox" required value="agreed"> <span class="text-danger">
+                    By Clicking Below I certify that I am the person on the Schedule & <br>
+                I have informed CareProStaffingLLC. Furthermore, if I delete my schedule <br>
+                and I do not notify CareProStaffing, my account may be deleted and put on suspension.
+                </span>
+
+            </form>
+        </ul>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<%- include('layouts/footer') -%>
+<!-- Footer -->
+
+<%- include('layouts/scripts') -%>
+
+</body>
+</html>
+

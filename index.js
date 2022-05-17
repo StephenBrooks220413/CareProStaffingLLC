@@ -65,12 +65,12 @@ const dashboardController = require('./controllers/dashboard')
 const contactController = require('./controllers/contact');
 const applyPageController = require('./controllers/apply');
 const aboutController = require('./controllers/about');
-const pocController = require('./controllers/POC');
 const communityController = require('./controllers/community');
 const portfolioController = require('./controllers/portfolio');
 const loginController = require('./controllers/login');
 const registerController = require('./controllers/register');
 const storeUserController = require('./controllers/storeUser');
+const deleteUserController = require('./controllers/deleteUser');
 const loginUserController = require('./controllers/loginUser');
 const logoutController = require('./controllers/logout');
 const profilesController = require('./controllers/profiles');
@@ -79,10 +79,15 @@ const newReviewController = require('./controllers/newReview');
 const storeReviewController = require('./controllers/storeReview');
 const scheduleController = require('./controllers/schedule');
 const storeScheduleController = require('./controllers/storeSchedule');
+const changeScheduleController = require('./controllers/changeSchedule');
+const deleteScheduleController = require('./controllers/deleteSchedule');
 const applicantController = require('./controllers/storeApplicant');
 const storeController = require('./controllers/store');
 const termsController = require('./controllers/term');
-const employeeController = require('./controllers/employee')
+const employeeController = require('./controllers/employee');
+const createNoteController = require('./controllers/storeNote');
+const singleNoteController = require('./controllers/singleNote')
+const deleteNoteController = require('./controllers/deleteNote')
 /////////////////////////////////////////////////
 
 app.get('/', homeController);
@@ -96,7 +101,6 @@ app.post('/applicant', applicantController);
 app.get('/store', storeController)
 app.get('/about', aboutController);
 app.get('/portfolio', portfolioController);
-app.get('/poc', pocController);
 app.get('/community', communityController);
 
 //////////////////////////////////////////////////////////////////////////
@@ -108,9 +112,14 @@ app.post('/users/login', redirectIfAuthenticated, loginUserController);
 app.get('/auth/logout', logoutController);
 app.get('/profiles', profilesController);
 app.get('/profile/:id', validateMiddleware, profileController);
+app.get('/deleteUser/:id', deleteUserController)
 app.post('/schedule/store', storeScheduleController)
 app.get('/scheduling',authMiddleware, scheduleController);
-
+app.get('/changeSchedule/:id', changeScheduleController);
+app.get('/deleteSchedule/:id', deleteScheduleController);
+app.post('/createnote', createNoteController);
+app.get('/singleNote/:id', singleNoteController);
+app.get('/deletenote/:id', deleteNoteController)
 ///////////////////////////////////////////////////////////
 // Reviews
 app.get('/auth/createReview', newReviewController);
