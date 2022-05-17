@@ -82,9 +82,11 @@ const storeScheduleController = require('./controllers/storeSchedule');
 const applicantController = require('./controllers/storeApplicant');
 const storeController = require('./controllers/store');
 const termsController = require('./controllers/term');
+const employeeController = require('./controllers/employee')
 /////////////////////////////////////////////////
 
 app.get('/', homeController);
+app.get('/employee', employeeController)
 app.get('/admin', adminController);
 app.get('/terms&conditions', termsController);
 app.get('/dashboard', dashboardController)

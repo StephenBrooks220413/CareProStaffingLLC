@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- home header -->
+<%- include('layouts/header') -%>
+
+<body class="bg-layout">
+<!-- Navbar -->
+<%- include('layouts/navBar') -%>
+
+<div class="container" style="margin-top: 70px; margin-bottom: 70px;">
+    <% for(i=0; i<users.length; i++) { %>
+        <h1 class="display-5" href="#!">
+            Hello <%= users[i].name %>
+        </h1>
+
+        <div class="row">
+            <div class="col-md m-2">
+                <h3><%= users[i].username %></h3>
+                <p><%= users[i].phone %></p>
+                <p><%= users[i].email %></p>
+                <p><%= users[i].about %></p>
+            </div>
+            <div class="col-md m-2">
+                <img src="/uploads/<%= users[i].image %>" class="img-fluid shadow-2-strong rounded" alt="<%= users[i].name %>">
+            </div>
+        </div>
+
+    <% } %>
+
+        <a class="btn btn-primary rounded-pill w-25" href="/scheduling">Schedule</a>
+        <a class="btn btn-info rounded-pill w-25" href="/store">CareProStore</a>
+
+</div>
+
+<!-- home footer -->
+<%- include('layouts/footer') -%>
+</body>
+<!-- js content -->
+<%- include('layouts/scripts') -%>
+</html>
