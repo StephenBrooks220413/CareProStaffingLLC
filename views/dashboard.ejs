@@ -211,25 +211,31 @@
     </div>
 
     <div class="container" style="margin-top: 60px; margin-bottom: 60px;">
+        <div class="row mb-5">
+            <div class="col-md-12 m-2">
+                <hr>
+                <div>
+                    <% for(i=0; i<notes.length; i++) { %>
+                        <div class="row row-cols-lg-auto mx-auto d-flex justify-content-center align-items-center py-1 me-2 text-center">
+                            <div class="card p-2">
+                                <h4><%= notes[i].title %></h4>
+                                <a href="/singleNote/<%= notes[i]._id %>">
+                                    <img src="<%= notes[i].image %>" style="max-height: 40px;" class="img-fluid rounded-circle" alt="<%= notes[i].name %>">
+                                </a>
+                                <p><%= notes[i].description %></p>
+                                <p><%= notes[i].datePosted.toLocaleString() %></p>
+                                <form action="/deletenote/<%= notes[i]._id %>" method="delete">
+                                    <button type="submit" class="btn btn-warning rounded-pill">Delete</button>
+                                </form>
+                            </div>
+                        </div>
+                    <% } %>
+                </div>
+                <hr>
+            </div>
+        </div>
         <h1 class="display-5">Create Notes For Yourself</h1>
         <div class="row">
-            <div class="col-md-12 m-2">
-                <% for(i=0; i<notes.length; i++) { %>
-                    <div class="row row-cols-lg-auto mx-auto d-flex justify-content-center align-items-center py-1 me-2 text-center">
-                        <div class="card p-2">
-                            <h4><%= notes[i].title %></h4>
-                            <a href="/singleNote/<%= notes[i]._id %>">
-                                <img src="<%= notes[i].image %>" style="max-height: 40px;" class="img-fluid rounded-circle" alt="<%= notes[i].name %>">
-                            </a>
-                            <p><%= notes[i].description %></p>
-                            <p><%= notes[i].datePosted.toLocaleString() %></p>
-                            <form action="/deletenote/<%= notes[i]._id %>" method="delete">
-                                <button type="submit" class="btn btn-warning rounded-pill">Delete</button>
-                            </form>
-                        </div>
-                    </div>
-                <% } %>
-            </div>
             <div class="col-md-12 m-2">
                 <form action="/createnote" method="post" enctype="multipart/form-data">
                     <!-- Name input -->
