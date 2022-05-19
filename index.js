@@ -15,7 +15,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(fileUpload());
 app.use(expressSession({
-    secret:process.env.SECRET
+    secret:process.env.SECRET,
+    resave: true,
+    saveUninitialized: true
 }));
 app.use(flash());
 
@@ -75,6 +77,7 @@ const loginUserController = require('./controllers/loginUser');
 const logoutController = require('./controllers/logout');
 const profilesController = require('./controllers/profiles');
 const profileController = require('./controllers/profile');
+const updateUserController = require('./controllers/updateUser');
 const newReviewController = require('./controllers/newReview');
 const storeReviewController = require('./controllers/storeReview');
 const scheduleController = require('./controllers/schedule');
@@ -112,14 +115,15 @@ app.post('/users/login', redirectIfAuthenticated, loginUserController);
 app.get('/auth/logout', logoutController);
 app.get('/profiles', profilesController);
 app.get('/profile/:id', validateMiddleware, profileController);
-app.get('/deleteUser/:id', deleteUserController)
-app.post('/schedule/store', storeScheduleController)
+app.get('/deleteUser/:id', deleteUserController);
+app.post('/updateUser/:id', updateUserController);
+app.post('/schedule/store', storeScheduleController);
 app.get('/scheduling',authMiddleware, scheduleController);
 app.get('/changeSchedule/:id', changeScheduleController);
 app.get('/deleteSchedule/:id', deleteScheduleController);
 app.post('/createnote', createNoteController);
 app.get('/singleNote/:id', singleNoteController);
-app.get('/deletenote/:id', deleteNoteController)
+app.get('/deletenote/:id', deleteNoteController);
 ///////////////////////////////////////////////////////////
 // Reviews
 app.get('/auth/createReview', newReviewController);
