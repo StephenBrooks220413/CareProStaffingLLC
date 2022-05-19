@@ -85,7 +85,7 @@ const storeScheduleController = require('./controllers/storeSchedule');
 const changeScheduleController = require('./controllers/changeSchedule');
 const deleteScheduleController = require('./controllers/deleteSchedule');
 const applicantController = require('./controllers/storeApplicant');
-const storeController = require('./controllers/store');
+// const storeController = require('./controllers/store');
 const termsController = require('./controllers/term');
 const employeeController = require('./controllers/employee');
 const createNoteController = require('./controllers/storeNote');
@@ -101,7 +101,7 @@ app.get('/dashboard', dashboardController)
 app.get('/contact', contactController)
 app.get('/apply', applyPageController)
 app.post('/applicant', applicantController);
-app.get('/store', storeController)
+// app.get('/store', storeController);
 app.get('/about', aboutController);
 app.get('/portfolio', portfolioController);
 app.get('/community', communityController);

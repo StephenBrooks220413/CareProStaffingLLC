@@ -11,7 +11,12 @@
 <div class="container" style="margin-top: 60px; margin-bottom: 60px;">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
+            <% if(loggedIn){ %>
             <li class="breadcrumb-item"><a href="/employee">Profile</a></li>
+            <% } %>
+            <% if(!loggedIn) {%>
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <% } %>
             <li class="breadcrumb-item active" aria-current="page">Store</li>
         </ol>
     </nav>
