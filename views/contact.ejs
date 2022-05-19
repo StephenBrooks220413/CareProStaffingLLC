@@ -7,8 +7,19 @@
 <!-- Navbar -->
 <%- include('layouts/navBar') -%>
 
-<div class="container p-4" style="margin-top: 60px; margin-bottom: 60px;">
-    <form id="contactForm" data-sb-form-api-token="dd11c8aa-4fd7-447c-9d21-59f642133133">
+<div class="container text-center p-4" style="margin-top: 60px; margin-bottom: 60px;">
+
+    <h1 class="display-1 magenta" style="font-family: 'Beau Rivage', cursive;">
+        Client Inquiry
+    </h1>
+
+    <p class="lead mt-4 mb-5 text-white">
+        In this messaging area, please include an image of the time card for the nurse that was sent there if applicable. Also, your description
+        of the nurse that was staffed at your location, your business name and location. We will
+        be back with you soon.
+    </p>
+
+    <form id="contactForm" class="mt-5" data-sb-form-api-token="dd11c8aa-4fd7-447c-9d21-59f642133133">
         <div class="form-floating mb-3">
             <input class="form-control" required id="facility" type="text" placeholder="Your Facility" data-sb-validations="required,facility" />
             <label for="facility">Facility/Company</label>
@@ -47,7 +58,7 @@
             <div class="text-center text-danger mb-3">Error sending message!</div>
         </div>
         <div class="d-grid">
-            <button class="btn btn-primary btn-lg" id="submitButton" type="submit">Submit</button>
+            <button class="btn btn-magenta rounded-pill form-control" id="submitButton" type="submit">Submit</button>
         </div>
     </form>
 </div>
