@@ -89,8 +89,9 @@ const applicantController = require('./controllers/storeApplicant');
 const termsController = require('./controllers/term');
 const employeeController = require('./controllers/employee');
 const createNoteController = require('./controllers/storeNote');
-const singleNoteController = require('./controllers/singleNote')
-const deleteNoteController = require('./controllers/deleteNote')
+const singleNoteController = require('./controllers/singleNote');
+const deleteNoteController = require('./controllers/deleteNote');
+const TimeCardApprovalController = require('./controllers/TimeCardApproval');
 /////////////////////////////////////////////////
 
 app.get('/', homeController);
@@ -105,7 +106,7 @@ app.post('/applicant', applicantController);
 app.get('/about', aboutController);
 app.get('/portfolio', portfolioController);
 app.get('/community', communityController);
-
+app.get('/TimeCardApproval', TimeCardApprovalController);
 //////////////////////////////////////////////////////////////////////////
 // Users
 app.get('/auth/login', redirectIfAuthenticated, loginController);

@@ -10,14 +10,8 @@
 <div class="container text-center p-4" style="margin-top: 60px; margin-bottom: 60px;">
 
     <h1 class="display-1 magenta" style="font-family: 'Beau Rivage', cursive;">
-        Client Inquiry
+        Inquire About Us
     </h1>
-
-    <p class="lead mt-4 mb-5 text-white">
-        In this messaging area, please include an image of the time card for the nurse that was sent there if applicable. Also, your description
-        of the nurse that was staffed at your location, your business name and location. We will
-        be back with you soon.
-    </p>
 
     <form id="contactForm" class="mt-5" data-sb-form-api-token="dd11c8aa-4fd7-447c-9d21-59f642133133">
         <div class="form-floating mb-3">
@@ -37,14 +31,8 @@
             <div class="invalid-feedback" data-sb-feedback="emailAddress:email">Email Address Email is not valid.</div>
         </div>
         <div class="form-floating mb-3">
-            <input class="form-control" required id="image" type="file" placeholder="Time Card Photo" data-sb-validations="required,photo" />
-            <label for="image">Time Card Photo</label>
-            <div class="invalid-feedback" data-sb-feedback="timeCardPhoto:required">Photo of time card is required.</div>
-            <div class="invalid-feedback" data-sb-feedback="timeCardPhoto:photo">Photo of time card is not valid.</div>
-        </div>
-        <div class="form-floating mb-3">
             <textarea class="form-control" required id="message" type="text" placeholder="Your staffing needs" style="height: 10rem;" data-sb-validations="required"></textarea>
-            <label for="message">Client Inquiry of Contractor</label>
+            <label for="message">Client Needs for Nurse Staffing</label>
             <div class="invalid-feedback" data-sb-feedback="message:required">Message is required.</div>
         </div>
         <div class="d-none" id="submitSuccessMessage">
