@@ -16,3 +16,13 @@
 .max-logo {
     max-height: 290px;
 }
+
+.img-position {
+    float: left;
+    margin: 2px;
+}
+.text-content {
+    margin: 2px;
+    text-align: justify;
+    font-size: 18px;
+}
